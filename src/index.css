@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+.font-primary {
+  font-family: "Luckiest Guy", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@theme {
+  --color-primary: #03122f;
+  --color-secondary: #19305c;
+  --color-tertiary: #413b61;
+  --color-accent: #ae7dac;
+  --color-accent-light: #f1916d;
+  --color-clear: #d1b3ff;
+  --color-accent-light-dark: #e28766;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-start-rgb))
+    )
+    rgb(var(--background-end-rgb));
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+
+.btn-primary {
+  @apply bg-blue-700 hover:bg-blue-800 text-white py-2 px-4 rounded transition-all;
+}
+
+.btn-disabled {
+  @apply bg-gray-600 text-white py-2 px-4 rounded transition-all;
+}
+
+.btn-secondary {
+  @apply bg-gray-200 hover:bg-gray-300 text-black py-2 px-4 rounded transition-all;
+}
+
+.btn-danger {
+  @apply bg-red-500 hover:bg-red-700 text-white py-2 px-4 transition-all;
+}
+
+.btn-base {
+  @apply text-white w-full px-4 py-2 rounded  transition-colors cursor-pointer font-semibold;
+}
